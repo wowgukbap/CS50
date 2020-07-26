@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    int n = get_int("Number of scores: "); // 점수의 개수를 입력받아 n에 저장
+    int scores[n]; // scores의 배열안에 n개의 변수 생성
+
+    for(int i = 0; i < n; i++)
+    {
+        scores[i] = get_int("Scores %d: ", i + 1); // 변수 scores의 배열안에 n개만큼의 점수를 입력받는다. (i + 1)은 더 깔금한 코드를 위해 추가함.
+    }
+    printf("TODO: ")
+}
+
+float average(int length, int array[]) // 함수 : length라는 정수, array라는 배열 2개를 입력값으로 받아요 (함수는 내가 만드는 것이니 이름 상관 없음!)
+{ 
+    int sum = 0;
+    for (int i = 0; i < length; i++)
+    {
+        sum += array[i];
+    }
+}   
