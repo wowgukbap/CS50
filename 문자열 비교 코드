@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <string.h> // strlen 포함한 라이브러리
+
+int compare(char *s1, char *s2);
+
+int main(){
+
+    // 사용자로부터 a와 b두 개의 문자열 입력받아 저장
+    char *a = get_string("a: ");
+    char *b = get_string("b: ");
+
+    printf("a: %s\n", a);
+    printf("b: %s\n", b);
+
+    compare(a, b);
+
+}
+
+int compare(char *s1, char *s2) {
+    int i = 0;
+
+    while (*(s1 + i) != '\0') {                   // s1의 값이 \0이 아니라면 루프 실행
+        if (strlen(s1) != strlen(s2)) {           // strlen으로 두개의 문자열의 길이 비교
+            printf("문자열의 길이가 다릅니다.\n");
+            return 1;
+        }
+        else if (*(s1 + i) != *(s2 + i)) {        // s1, s2의 문자열을 각각 비교 
+            printf("Different string\n");
+            return 1;
+        }
+        else {
+            i++;
+        }
+    }
+    printf("Same string\n");
+    return 0;
+}
+
